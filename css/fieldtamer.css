@@ -1,0 +1,11 @@
+.fieldtamer-header {
+	margin: 50px -35px 25px;
+	padding: 10px 35px;
+	border-top: 3px double #d7d7ca;
+	border-bottom: 1px solid #e2e2d8;
+}
+.fieldtamer-header > label {
+	font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+	font-size: 28px;
+	padding: 0;
+}
