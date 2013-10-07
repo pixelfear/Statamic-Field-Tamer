@@ -44,7 +44,10 @@ class Fieldtype_fieldtamer extends Fieldtype
 				var fields = '. json_encode($this->field_config['fields']) .';
 				var newFields = [];
 				$(fields).each(function(key, val) {
-					var inputRow = fieldContainer.find("[name=\'page[yaml]["+val+"]\']").closest(".input-block");
+					var fieldSelector = (val === "content") 
+					                    ? "[name=\'page[content]\']" 
+					                    : "[name=\'page[yaml]["+val+"]\']";
+					var inputRow = fieldContainer.find(fieldSelector).closest(".input-block");
 					inputRow.appendTo("#'.$placeholder.'");
 				});
 				
