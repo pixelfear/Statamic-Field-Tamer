@@ -9,7 +9,7 @@ class Hooks_fieldtamer extends Hooks
 	*/
 	function control_panel__add_to_head()
 	{
-		if (URL::getCurrent() == '/publish') {
+		if (in_array(URL::getCurrent(), array('/publish', '/member'))) {
 			return $this->css->link('fieldtamer.css');
 		}
 	}
