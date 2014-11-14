@@ -39,19 +39,19 @@ class Fieldtype_fieldtamer extends Fieldtype
 
 		// JavaScript
 		$js = $this->js->inline('
-			(function() {
+			$(function() {
 				var fieldContainer = $(".section.content");
 				var fields = '. json_encode($this->field_config['fields']) .';
 				var newFields = [];
 				$(fields).each(function(key, val) {
-					var fieldSelector = (val === "content") 
-					                    ? "[name=\'page[content]\']" 
-					                    : "[name^=\'page[yaml]["+val+"]\'], [data-empty-row*=\'page[yaml]["+val+"]\']";
+					var fieldSelector = (val === "content")
+					                    ? "[name=\'page[content]\']"
+					                    : "[name^=\'page[yaml]["+val+"]\'], [data-empty-row*=\'page[yaml]["+val+"]\'], [data-field-name*=\'page[yaml]["+val+"]\']";
 					var inputRow = fieldContainer.find(fieldSelector).first().closest(".input-block");
 					inputRow.appendTo("#'.$placeholder.'");
 				});
-				
-			})();
+
+			});
 		');
 
 		// Output
