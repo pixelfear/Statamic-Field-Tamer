@@ -47,7 +47,7 @@ class Fieldtype_fieldtamer extends Fieldtype
 					var fieldSelector = (val === "content")
 					                    ? "[name=\'page[content]\']"
 					                    : "[name^=\'page[yaml]["+val+"]\'], [data-empty-row*=\'page[yaml]["+val+"]\'], [data-field-name*=\'page[yaml]["+val+"]\']";
-					var inputRow = fieldContainer.find(fieldSelector).first().closest(".input-block");
+					var inputRow = fieldContainer.find(fieldSelector).first().parents(".input-block").last();
 					inputRow.appendTo("#'.$placeholder.'");
 				});
 
